@@ -37,4 +37,10 @@ impl Framebuffer {
     pub fn set_current_color(&mut self, color: u32) {
         self.current_color = color;
     }
+
+    pub fn point_color(&mut self, x: usize, y: usize, color: u32) {
+        if x < self.width && y < self.height {
+            self.buffer[y * self.width + x] = color;
+        }
+    }
 }
